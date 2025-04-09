@@ -25,7 +25,7 @@ const UnicornTableView = () => {
     const handleDelete = async (id) => {
         try {
             await deleteUnicorn(id);
-            fetchUnicorns(); // Refresca lista luego de borrar
+            fetchUnicorns(); 
         } catch (error) {
             console.error('Error al eliminar:', error);
         }
@@ -33,7 +33,6 @@ const UnicornTableView = () => {
 
     const handleEdit = (unicorn) => {
         console.log(unicorn)
-        // Redirige a una vista de edición con el ID del unicornio
         navigate(`/unicorns/edit/${unicorn._id}`);
     };
 
