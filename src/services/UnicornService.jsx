@@ -1,4 +1,4 @@
-const API_URL = 'https://crudcrud.com/api/0644bcf4f44043399a1495baa375ea98/unicorns';
+const API_URL = 'https://crudcrud.com/api/26c73534090f49b58fdcf5bf5345fa1a/unicorns';
 
 export const getAllUnicorn = async () => {
     const response = await fetch(`${API_URL}`);
