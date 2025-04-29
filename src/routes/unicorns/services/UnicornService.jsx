@@ -1,4 +1,4 @@
-const API_URL = 'https://crudcrud.com/api/26c73534090f49b58fdcf5bf5345fa1a/unicorns';
+const API_URL = 'http://127.0.0.1:5000/unicorns';
 
 export const getAllUnicorn = async () => {
     const response = await fetch(`${API_URL}`);
@@ -11,7 +11,19 @@ export const getAllUnicorn = async () => {
     return data;
 }
 
+export const getUnicornByIdService = async (id) => {
+    const response = await fetch(`${API_URL}/${id}`);
+
+    if (!response.ok) {
+        throw new Error('Error fetching unicorn by ID');
+    }
+
+    const data = await response.json();
+    return data;
+}
+
 export const createUnicorn = async (unicorn) => {
+    console.log(unicorn)
     const response = await fetch(`${API_URL}`, {
         method: 'POST',
         headers: {
@@ -29,6 +41,7 @@ export const createUnicorn = async (unicorn) => {
 }
 
 export const updateUnicorn = async (id, unicorn) => {
+    console.log(unicorn)
     const response = await fetch(`${API_URL}/${id}`, {
         method: 'PUT',
         headers: {
@@ -37,7 +50,7 @@ export const updateUnicorn = async (id, unicorn) => {
         body: JSON.stringify(unicorn)
     });
 
-    if(!response.ok) {
+    if (!response.ok) {
         throw new Error('Error updating unicorn');
     }
 

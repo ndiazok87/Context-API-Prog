@@ -11,7 +11,7 @@ const Home = () => {
             <Button
             label="Ver Tabla de Unicornios"
             icon="pi pi-table"
-            onClick={() => navigate('/unicorns/table')}
+            onClick={() => navigate('/unicorns/')}
             className="p-button-primary"
         />
         <Button
